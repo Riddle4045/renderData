@@ -1,0 +1,28 @@
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>Images</th>
+    <th>text</th>
+	<th>Add to database<th>
+  </tr>
+  <tr>
+    <td><img src="http://pbs.twimg.com/media/BzFpBcFIYAAcdmP.jpg" width="120" height="120"></td>
+    <td>This is the text part</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$80</td>
+  </tr>
+</table>
+</body>
+</html>
+
