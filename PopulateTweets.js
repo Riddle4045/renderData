@@ -35,6 +35,20 @@
 												}
 									});
 						}
+						function createTables(){
+									var displayTable = document.createElement("table");
+									var body = document.getElementById("myFukcingBody");
+									body.appendChild(displayTable);
+									var tableHeadings =document.createElement("th");
+									var ImageHeader = document.createElement("td").innerHTML ="Images";
+									tableHeadings.appendChild(ImageHeader);
+									var textHeader = document.createElement("td").innerHTML = "Text";
+									tableHeadings.appendChild(textHeader);
+									var addDeleteHeader = document.createElement("td").innerHTML = "add/delete";
+									tableHeadings.appendChild(addDeleteHeader);
+									displayTable.appendChild(tableHeadings);
+									
+						}
 
 						function prepDisplayDiv(count,keyword){
 									
