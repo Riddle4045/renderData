@@ -16,7 +16,7 @@
 									}
 									var node = document.getElementById("myFukcingBody").innerHTML= '';
 							
-									document.getElementById("data").innerHTML="";
+									//document.getElementById("data").innerHTML="";
 									console.log(str);
 									$.ajax( {
 											type : 'post',
@@ -47,7 +47,7 @@
 									var addDeleteHeader = document.createElement("td").innerHTML = "add/delete";
 									tableHeadings.appendChild(addDeleteHeader);
 									displayTable.appendChild(tableHeadings);
-									
+
 						}
 
 						function prepDisplayDiv(count,keyword){
