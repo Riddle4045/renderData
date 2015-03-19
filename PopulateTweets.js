@@ -29,26 +29,48 @@
 													var count = Object.keys(data)[Object.keys(data).length-1];
 
 													console.log(count,str);
-													prepDisplayDiv(count,str);
-													createPaginationHTML(str,currIndex);
-													createDiv(data);
+													//prepDisplayDiv(count,str);
+													//createPaginationHTML(str,currIndex);
+													//createDiv(data);
+													createTables(data);
 												}
 									});
 						}
-						function createTables(){
+						function createTables(data){
 									var displayTable = document.createElement("table");
 									var body = document.getElementById("myFukcingBody");
 									body.appendChild(displayTable);
 									var tableHeadings =document.createElement("th");
-									var ImageHeader = document.createElement("td").innerHTML ="Images";
+									var ImageHeader = document.createElement("td");
+									ImageHeader.innerHTML ="Images";
 									tableHeadings.appendChild(ImageHeader);
-									var textHeader = document.createElement("td").innerHTML = "Text";
+									var textHeader = document.createElement("td");
+									textHeader.innerHTML = "Text";
 									tableHeadings.appendChild(textHeader);
-									var addDeleteHeader = document.createElement("td").innerHTML = "add/delete";
+									var addDeleteHeader = document.createElement("td");
+									addDeleteHeader.innerHTML = "add/delete";
 									tableHeadings.appendChild(addDeleteHeader);
 									displayTable.appendChild(tableHeadings);
-
-						}
+									
+									for(var i =0 ; i < data.length; i++){
+									//adding entries to rwos and columns..
+									var row = document.createElement("tr");
+									var img_col = document.createElement("td");
+									var img = document.createElement("img");
+									img.setAttribute('width','120');
+									img.setAttribute('height','120');
+									img.setAttribute('src',data[i].imgUrl);
+									img_col.appendChild(img);
+									displayTable.appendChild(row);
+									row.appendChild(img_col);
+									
+									var text_col = document.createElement("td");
+									var t = document.createTextNode(data[i].text);
+									text_col.appendChild(t);
+									row.appendChild(text_col);	
+								}								
+													
+					}
 
 						function prepDisplayDiv(count,keyword){
 									

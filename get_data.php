@@ -17,7 +17,7 @@
 		$get_old_set=false;
 
 		$oldIndex =0;
-		if( $_POST['currIndex'] == 1) $oldIndex = 0;
+	/*8	if( $_POST['currIndex'] == 1) $oldIndex = 0;
 		else if ($_POST['currIndex'] > 1 ){
 				$oldIndex = ($currIndex-1)*10;
 		}
@@ -32,7 +32,10 @@
 				$numItemsPerPage = $_POST['numItemsPerPage'];
 
 		}
-
+**/
+		if ( isset($_POST['input'])) {
+                $keyword = $_POST['input'];
+        }
 		if ( isset($_POST["set2"])) {
 				$get_old_set =true;
 		}
@@ -58,12 +61,11 @@
 							$entities = $document['entities'];
 							
 							if (isset($entities['media'])) {
-									if ( $index >= $oldIndex && $index <=$currIndex){
 													$media  = $entities['media'];
 													$img = $media[0]["media_url"];
 													$jsonString[] = array("id"=>$id,"text"=>$text,"imgUrl"=>$img);
 													$count = $count + 1;
-	 								}
+	 								
 										
 							}
 					}
