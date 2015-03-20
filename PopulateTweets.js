@@ -60,16 +60,46 @@
 									img.setAttribute('width','120');
 									img.setAttribute('height','120');
 									img.setAttribute('src',data[i].imgUrl);
+									//img.setAttribute('value',data[i].id);
 									img_col.appendChild(img);
 									displayTable.appendChild(row);
 									row.appendChild(img_col);
-									
+									console.log(data[i].id);								
 									var text_col = document.createElement("td");
 									var t = document.createTextNode(data[i].text);
 									text_col.appendChild(t);
 									row.appendChild(text_col);	
+									
+									var addBtn = document.createElement("button");
+									addBtn.setAttribute('name','ADD');
+									addBtn.innerHTML = "ADD";
+									addBtn.setAttribute('value',data[i].id);
+									addBtn.onclick = function() {
+												save_to_mongo(this.getAttribute('value'));
+
+									}
+									var button_col = document.createElement("td");
+									row.appendChild(button_col);
+									button_col.appendChild(addBtn);
+									
+									var delBtn = document.createElement("button");
+									delBtn.setAttribute('name','DELETE');
+									delBtn.innerHTML = "DELETE";
+									delBtn.setAttribute('value',data[i].id);
+									delBtn.onclick = function() {
+												delete_from_mongo(this.getAttribute('value'));
+
+									}
+									row.appendChild(button_col);
+									button_col.appendChild(delBtn);
 								}								
 													
+					}
+					function save_to_mongo(id){
+								alert(id);
+					}
+					function delete_from_mongo(id){
+							alert(id);
 					}
 
 						function prepDisplayDiv(count,keyword){

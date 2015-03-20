@@ -56,7 +56,7 @@
 					while ( $cursor->hasNext() ) {
 							$index = $index +1;
 							$document = $cursor->getNext();
-			                $id = $document['id'];
+			                $id = (string)$document['_id'];
 							$text = $document['text'];
 							$entities = $document['entities'];
 							
